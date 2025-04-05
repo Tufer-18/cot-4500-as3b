@@ -1,6 +1,6 @@
 import numpy as np
 
-def gaussian_elimination(A, b):
+def gaussian_elimination(A, b): #Gaussian Elimination Function
     A = A.astype(float)
     b = b.astype(float)
     n = len(A)
@@ -23,7 +23,7 @@ def gaussian_elimination(A, b):
     return x
 
 
-def lu_factorization(A):
+def lu_factorization(A): #LU Factorization Function
     n = len(A)
     L = np.eye(n)
     U = A.astype(float)
@@ -37,7 +37,7 @@ def lu_factorization(A):
     determinant = np.prod(np.diag(U))
     return L, U, determinant
 
-def is_diagonally_dominant(A):
+def is_diagonally_dominant(A): #Program to check for diagonal dominance
     for i in range(len(A)):
         row_sum = sum(abs(A[i, j]) for j in range(len(A)) if i != j)
         if abs(A[i, i]) < row_sum:
@@ -46,7 +46,7 @@ def is_diagonally_dominant(A):
     
     return True
 
-def is_positive_definite(A):
+def is_positive_definite(A): #Function to check for positive definite.
     try:
         np.linalg.cholesky(A)
        
@@ -56,29 +56,40 @@ def is_positive_definite(A):
         return False
 
 
-A = np.array([[2, -1, 1], [1, 3, 1], [-1, 5, 4]], dtype=float)
-b = np.array([6, 0, -3], dtype=float)
+# Gaussian Elimination function test------------------------------------------------------------------------------------------------------------------------------
+A = np.array([[val,val,val...], 
+              [val,val,val...], 
+              [val,val,val...]], dtype=float) #Enter rows and values for Matrix A here.
+b = np.array([val, val, val...], dtype=float) # Enter values for Matrix B here.
 print(gaussian_elimination(A, b))
 
-A = np.array([[1, 1, 0, 3], [2, 1, -1, 1], [3, -1, -1, 2], [-1, 2, 3, -1]], dtype=float)
+# LU Factorization Function test----------------------------------------------------------------------------------------------------------------------------------
+A = np.array([[val,val,val,val...], 
+              [val,val,val,val...], 
+              [val,val,val,val...], 
+              [val,val,val,val...]], dtype=float) #Enter values and rows for matrix here.
 L, U, det_A = lu_factorization(A)
 print("\n", det_A)
 print("\n", L)
 print("\n", U)
 print("\n")    
 
+# Diagonal Dominant test---------------------------------------------------------------------------------------------------------------------------------------------
 A = np.array([
-    [9, 0, 5, 2, 1],
-    [3, 9, 1, 2, 1],
-    [0, 1, 7, 2, 3],
-    [4, 2, 3, 12, 2],
-    [3, 2, 4, 0, 8]
-    ], dtype=float)
+    [val,val,val,val,val...],
+    [val,val,val,val,val...],
+    [val,val,val,val,val...],
+    [val,val,val,val,val...],
+    [val,val,val,val,val...]
+    ], dtype=float) # Enter rows and values for matrix here.
 print("Diagonally Dominant:", is_diagonally_dominant(A))
 print("\n")
+
+
+# Positive Definite test-----------------------------------------------------------------------------------------------------------------------------------------------
 A = np.array([
      [2, 2, 1],
      [2, 3, 0],
      [1, 0, 2]
-    ], dtype=float)
+    ], dtype=float) #Enter values and rows for matrix here.
 print("Positive Definite:", is_positive_definite(A))
