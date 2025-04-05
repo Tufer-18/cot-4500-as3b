@@ -88,8 +88,8 @@ print("\n")
 
 # Positive Definite test-----------------------------------------------------------------------------------------------------------------------------------------------
 A = np.array([
-     [2, 2, 1],
-     [2, 3, 0],
-     [1, 0, 2]
+     [val,val,val...],
+     [val,val,val...],
+     [val,val,val...]
     ], dtype=float) #Enter values and rows for matrix here.
 print("Positive Definite:", is_positive_definite(A))
