@@ -1,6 +1,6 @@
 import numpy as np
 
-def gaussian_elimination(A, b): #Gaussian Elimination Function
+def gaussian_elimination(A, b): #Gaussian Elimination Function------------------------------------------------------------------------------------------------------
     A = A.astype(float)
     b = b.astype(float)
     n = len(A)
@@ -23,7 +23,7 @@ def gaussian_elimination(A, b): #Gaussian Elimination Function
     return x
 
 
-def lu_factorization(A): #LU Factorization Function
+def lu_factorization(A): #LU Factorization Function------------------------------------------------------------------------------------------------------------------
     n = len(A)
     L = np.eye(n)
     U = A.astype(float)
@@ -37,7 +37,7 @@ def lu_factorization(A): #LU Factorization Function
     determinant = np.prod(np.diag(U))
     return L, U, determinant
 
-def is_diagonally_dominant(A): #Program to check for diagonal dominance
+def is_diagonally_dominant(A): #Program to check for diagonal dominance----------------------------------------------------------------------------------------------
     for i in range(len(A)):
         row_sum = sum(abs(A[i, j]) for j in range(len(A)) if i != j)
         if abs(A[i, i]) < row_sum:
@@ -46,7 +46,7 @@ def is_diagonally_dominant(A): #Program to check for diagonal dominance
     
     return True
 
-def is_positive_definite(A): #Function to check for positive definite.
+def is_positive_definite(A): #Function to check for positive definite.-----------------------------------------------------------------------------------------------
     try:
         np.linalg.cholesky(A)
        
