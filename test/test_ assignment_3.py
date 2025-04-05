@@ -57,12 +57,17 @@ def is_positive_definite(A): #Function to check for positive definite.
 
 
 # Gaussian Elimination function test------------------------------------------------------------------------------------------------------------------------------
-A = np.array([[2, -1, 1], [1, 3, 1], [-1, 5, 4]], dtype=float)
+A = np.array([[2, -1, 1], 
+              [1, 3, 1], 
+              [-1, 5, 4]], dtype=float)
 b = np.array([6, 0, -3], dtype=float)
 print(gaussian_elimination(A, b))
 
 # LU Factorization Function test----------------------------------------------------------------------------------------------------------------------------------
-A = np.array([[1, 1, 0, 3], [2, 1, -1, 1], [3, -1, -1, 2], [-1, 2, 3, -1]], dtype=float)
+A = np.array([[1, 1, 0, 3], 
+              [2, 1, -1, 1], 
+              [3, -1, -1, 2], 
+              [-1, 2, 3, -1]], dtype=float)
 L, U, det_A = lu_factorization(A)
 print("\n", det_A)
 print("\n", L)
